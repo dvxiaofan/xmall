@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-08 17:32:47
+ * @Last Modified time: 2018-11-08 18:01:20
  */
 
 var webpack = require('webpack');
@@ -32,9 +32,16 @@ var config = {
   },
   module: {
     loaders: [{
+      // CSSloader
       test: /\.css$/,
-      loader: Ex.extract('style-loader', 'css-loader'),
-    }]
+      loader: Ex.extract('style-loader', 'css-loader') 
+    },
+    {
+      // image loader
+      test: /\.(png|gif|jpg)\??.*$/,
+      loader: 'url-loader'
+    }
+  ]
   },
   plugins: [
     // 独立通用模块到js/base.js
