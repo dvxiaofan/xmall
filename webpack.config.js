@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-08 18:01:20
+ * @Last Modified time: 2018-11-08 18:39:13
  */
 
 var webpack = require('webpack');
@@ -38,9 +38,14 @@ var config = {
     },
     {
       // image loader
-      test: /\.(png|gif|jpg)\??.*$/,
-      loader: 'url-loader'
-    }
+      test: /\.(png|gif|jpg|svg|woff|eot|ttf)\??.*$/,
+      loader: 'url-loader',
+      query: {
+        limit: 100,
+        publicPath: '../',  // 解决打包后路径不对的问题
+        name: 'resource/[name].[ext]'
+      }
+    },
   ]
   },
   plugins: [
