@@ -8,6 +8,9 @@
     "webpack-cli": "^3.1.2"
   },
   "devDependencies": {
+    "css-loader": "^1.0.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "style-loader": "^0.23.1",
     "webpack": "^1.15.0"
   },
   "scripts": {
