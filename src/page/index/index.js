@@ -1,3 +1,6 @@
-var cats = require('./cats.js');
 
-console.log(cats);
+var $ = require('jquery');
+
+$('body').html('HELLO XIAOFAN');
+
+console.log('hello index');

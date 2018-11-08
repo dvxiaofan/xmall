@@ -1,8 +1,20 @@
+/*
+ * @Author: xiaofan 
+ * @Date: 2018-11-08 11:32:11 
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-11-08 15:27:45
+ */
 
-module.exports = {
-  entry: './src/page/index/index.js',
+
+var config = {
+  entry: {
+    'index': ['./src/page/index/index.js'],
+    'login': ['./src/page/login/index.js'],
+  },
   output: {
-    filename: 'app.js',
-    path: './dist'
+    path: './dist',
+    filename: 'js/[name].js',
   }
 };
+
+module.exports = config;
