@@ -2,11 +2,23 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-08 17:03:24
+ * @Last Modified time: 2018-11-08 17:32:47
  */
 
 var webpack = require('webpack');
 var Ex = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// 或许HTML的webpack参数
+var getHtmlWebpackPlugin = function (name) {
+  return {
+    template: './src/view/'+ name +'.html',
+    filename: 'view/'+ name +'.html',
+    inject: true,
+    hash: true,
+    chunks: ['common', name]
+  };
+};
 
 var config = {
   entry: {
@@ -25,11 +37,16 @@ var config = {
     }]
   },
   plugins: [
+    // 独立通用模块到js/base.js
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common',
       filename: 'js/base.js',
     }),
+    // 单独打包处理css
     new Ex('css/[name].css'),
+    // html处理
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('index')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('login')),
   ],
 };
 
