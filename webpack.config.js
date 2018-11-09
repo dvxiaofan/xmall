@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-09 15:41:07
+ * @Last Modified time: 2018-11-09 17:10:17
  */
 
 var webpack = require('webpack');
@@ -36,21 +36,29 @@ var config = {
   },
   module: {
     loaders: [{
-      // CSSloader
-      test: /\.css$/,
-      loader: Ex.extract('style-loader', 'css-loader') 
-    },
-    {
-      // image loader
-      test: /\.(png|gif|jpg|svg|woff|eot|ttf)\??.*$/,
-      loader: 'url-loader',
-      query: {
-        limit: 100,
-        publicPath: '../',  // 解决打包后路径不对的问题
-        name: 'resource/[name].[ext]'
-      }
-    },
-  ]
+        // CSSloader
+        test: /\.css$/,
+        loader: Ex.extract('style-loader', 'css-loader')
+      },
+      {
+        // image loader
+        test: /\.(png|gif|jpg|svg|woff|eot|ttf)\??.*$/,
+        loader: 'url-loader',
+        query: {
+          limit: 100,
+          publicPath: '../', // 解决打包后路径不对的问题
+          name: 'resource/[name].[ext]'
+        }
+      },
+    ]
+  },
+  resolve: {
+    alias: {
+      util: __dirname + '/src/util',
+      page: __dirname + '/src/page',
+      service: __dirname + '/src/service',
+      images: __dirname + '/src/images',
+    }
   },
   plugins: [
     // 独立通用模块到js/base.js
