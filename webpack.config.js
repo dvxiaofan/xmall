@@ -2,12 +2,15 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-08 18:39:13
+ * @Last Modified time: 2018-11-09 15:41:07
  */
 
 var webpack = require('webpack');
 var Ex = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// 配置环境变量 dev / online 
+var WEBPACK_ENV = process.env.WEBPACK_ENV || '';
 
 // 或许HTML的webpack参数
 var getHtmlWebpackPlugin = function (name) {
@@ -27,7 +30,8 @@ var config = {
     'common': ['./src/page/common/index.js'],
   },
   output: {
-    path: './dist',
+    path: './dist',       // 打包路径
+    publicPath: '/dist',  // 访问路径
     filename: 'js/[name].js',
   },
   module: {
@@ -61,5 +65,9 @@ var config = {
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('login')),
   ],
 };
+
+if ('dev' === WEBPACK_ENV) {
+  config.entry.common.push('webpack-dev-server/client?http://localhost:8088/');
+}
 
 module.exports = config;
