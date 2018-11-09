@@ -2,10 +2,10 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 15:42:22 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-09 18:48:22
+ * @Last Modified time: 2018-11-09 23:40:49
  */
 
-var _mm = require('util/mm.js');
+const _mm = require('util/mm.js');
 
 _mm.request({
 	url: '/product/list.do?keyword=1',
@@ -16,5 +16,3 @@ _mm.request({
 		console.log('errMsg: ' + errMsg);
 	}
 });
-
-// http://happymmall.com/product/list.do?keyword=1
