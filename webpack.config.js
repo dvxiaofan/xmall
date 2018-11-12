@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-12 15:06:00
+ * @Last Modified time: 2018-11-12 16:31:00
  */
 
 var webpack = require('webpack');
@@ -72,6 +72,7 @@ var config = {
     // html处理
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('index')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('login')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('register')),
   ],
 };
 
