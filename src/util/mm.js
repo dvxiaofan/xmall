@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-09 16:47:42 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-12 13:52:56
+ * @Last Modified time: 2018-11-12 14:14:39
  */
 
  const Hogan = require('hogan.js');
@@ -57,12 +57,38 @@ const _mm = {
 		const template = Hogan.compile(htmlTemplate);
 		return template.render(data);
 	},
-
-
-	//  强制登录页面
+	// 成功提示
+	successTips(msg) {
+		alert(msg || '操作成功');
+	},
+	// 错误提示
+	errorTips(msg) {
+		alert(msg || '貌似有个小问题呢');
+	},
+	// 字段验证， 校验是否为空， 手机、邮箱是否正确
+	validate(value, type) {
+		const value = $.trim(value);
+		// 非空验证
+		if (type === 'require') {
+			return !!value;
+		}
+		// 手机号验证
+		if (type === 'phone') {
+			return /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/.test(value);
+		}
+		// 邮箱验证
+		if(type === 'email') {
+			return /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(value);
+		}
+	},
+	//  跳转登录页面
 	doLogin() {
 		window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
-	}
+	},
+	// 跳转主页
+	goHome() {
+		window.location.href = './index.html';
+	},
 };
 
 
