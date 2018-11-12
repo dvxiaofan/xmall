@@ -1,0 +1,19 @@
+/*
+ * @Author: xiaofan 
+ * @Date: 2018-11-12 15:25:35 
+ * @Last Modified by: xiaofan
+ * @Last Modified time: 2018-11-12 15:37:43
+ */
+
+ .nav-simple {
+	 height: 60px;
+	 line-height: 60px;
+	 border-bottom: 1px solid #ddd;
+	 background-color: #fff;
+ }
+
+ .nav-simple .logo {
+	 font-size: 26px;
+	 color: #c00623;
+	 font-weight: bold;
+ }
