@@ -2,8 +2,12 @@
  * @Author: xiaofan 
  * @Date: 2018-11-09 16:47:42 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-09 23:39:41
+ * @Last Modified time: 2018-11-12 13:36:20
  */
+
+ const conf = {
+	 serverHost: ''
+ };
 
 const _mm = {
 	//  网络请求
@@ -33,6 +37,18 @@ const _mm = {
 				typeof param.error === 'function' && param.error(error.statusText);
 			}
 		});
+	},
+	// 获取后端服务地址
+	getServerUrl: function (path) {
+		return conf.serverHost + path;
+	},
+	// 获取url参数
+	getUrlParam: function (name) {
+		// 提取符合规则的参数的正则表达式
+		const reg = new RegExp('(^|&)' + name + '=([^&]*)($|&)');
+		// 从？后面开始匹配规则
+		const result = window.location.search.substr(1).match(reg);
+		return result ? decodeURIComponent(result[2]) : null;
 	},
 	//  强制登录页面
 	doLogin() {
