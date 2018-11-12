@@ -4,6 +4,7 @@
   "description": "mmall 前端部分",
   "main": "index.js",
   "dependencies": {
+    "hogan.js": "^3.0.2",
     "jquery": "^3.3.1",
     "webpack-cli": "^3.1.2"
   },

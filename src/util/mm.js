@@ -2,8 +2,10 @@
  * @Author: xiaofan 
  * @Date: 2018-11-09 16:47:42 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-12 13:36:20
+ * @Last Modified time: 2018-11-12 13:52:56
  */
+
+ const Hogan = require('hogan.js');
 
  const conf = {
 	 serverHost: ''
@@ -11,14 +13,14 @@
 
 const _mm = {
 	//  网络请求
-	request: function (param) {
+	request(param) {
 		const _this = this;
 		$.ajax({
 			type: param.method || 'get',
 			url: param.url || '',
 			dataType: param.type || 'json',
 			data: param.data || '',
-			success: function (res) {
+			success(res) {
 				//  请求成功
 				if (res.status === 0) {
 					typeof param.success === 'function' && param.success(res.data, res.msg);
@@ -33,23 +35,30 @@ const _mm = {
 				}
 			},
 			//  错误信息
-			error: function (error) {
+			error(error) {
 				typeof param.error === 'function' && param.error(error.statusText);
 			}
 		});
 	},
 	// 获取后端服务地址
-	getServerUrl: function (path) {
+	getServerUrl(path) {
 		return conf.serverHost + path;
 	},
 	// 获取url参数
-	getUrlParam: function (name) {
+	getUrlParam(name) {
 		// 提取符合规则的参数的正则表达式
 		const reg = new RegExp('(^|&)' + name + '=([^&]*)($|&)');
 		// 从？后面开始匹配规则
 		const result = window.location.search.substr(1).match(reg);
 		return result ? decodeURIComponent(result[2]) : null;
 	},
+	// 渲染HTML模板
+	renderHtml(htmlTemplate, data) {
+		const template = Hogan.compile(htmlTemplate);
+		return template.render(data);
+	},
+
+
 	//  强制登录页面
 	doLogin() {
 		window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
