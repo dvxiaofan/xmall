@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<%= require('html-loader!./layout/html-head.html') %>
+
+<head>
+	<%= require('html-loader!./layout/head-common.html') %>
+	<title>MMal电商平台</title>
+</head>
+
 <body>
-	hello MMall
-	<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+	<div>
+		<i class="fa fa-user"></i>
+	</div>
+
+	<%= require('html-loader!./layout/footer-common.html') %>
 </body>
+
 </html>

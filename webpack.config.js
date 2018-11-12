@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-09 17:10:17
+ * @Last Modified time: 2018-11-12 15:06:00
  */
 
 var webpack = require('webpack');
@@ -54,6 +54,7 @@ var config = {
   },
   resolve: {
     alias: {
+      node_modules: __dirname + '/node_modules',
       util: __dirname + '/src/util',
       page: __dirname + '/src/page',
       service: __dirname + '/src/service',
