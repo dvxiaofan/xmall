@@ -7,14 +7,23 @@
 </head>
 
 <body>
-	<!-- nav -->
-	<%= require('html-loader!./layout/nav.html') %>
-	<!-- 引入header -->
-	<%= require('html-loader!./layout/header.html') %>
+	<!-- nav-simple -->
+	<%= require('html-loader!./layout/nav-simple.html') %>
 
 	<div class="page-wrap w">
-		<%= require('html-loader!./layout/nav-side.html') %>
-		<div class="content with-nav">test</div>
+		<div class="result-con hide register-success">
+			<h1 class="result-title">恭喜您，注册成功</h1>
+			<div class="result-content">
+				<a href="./index.html" class="link">回到首页</a>
+			</div>
+		</div>
+
+		<div class="result-con hide default-success">
+			<h1 class="result-title">恭喜您，操作成功</h1>
+			<div class="result-content">
+				<a href="./index.html" class="link">回到首页</a>
+			</div>
+		</div>
 	</div>
 	<!-- 引入footer-common -->
 	<%= require('html-loader!./layout/footer-common.html') %>
