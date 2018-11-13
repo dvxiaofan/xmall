@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-12 16:31:00
+ * @Last Modified time: 2018-11-13 11:43:52
  */
 
 var webpack = require('webpack');
@@ -73,6 +73,11 @@ var config = {
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('index')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('login')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('register')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('list')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('order-list')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-center')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('about')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('cart')),
   ],
 };
 
