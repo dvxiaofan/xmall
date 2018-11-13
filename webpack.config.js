@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-13 11:43:52
+ * @Last Modified time: 2018-11-13 16:04:12
  */
 
 var webpack = require('webpack');
@@ -15,8 +15,8 @@ var WEBPACK_ENV = process.env.WEBPACK_ENV || '';
 // 或许HTML的webpack参数
 var getHtmlWebpackPlugin = function (name) {
   return {
-    template: './src/view/'+ name +'.html',
-    filename: 'view/'+ name +'.html',
+    template: './src/view/' + name + '.html',
+    filename: 'view/' + name + '.html',
     inject: true,
     hash: true,
     chunks: ['common', name]
@@ -30,18 +30,19 @@ var config = {
     'common': ['./src/page/common/index.js'],
   },
   output: {
-    path: './dist',       // 打包路径
-    publicPath: '/dist',  // 访问路径
+    path: './dist', // 打包路径
+    publicPath: '/dist', // 访问路径
     filename: 'js/[name].js',
   },
   module: {
     loaders: [{
-        // CSSloader
         test: /\.css$/,
         loader: Ex.extract('style-loader', 'css-loader')
+      }, {
+        test: /\.string$/,
+        loader: 'html-loader'
       },
       {
-        // image loader
         test: /\.(png|gif|jpg|svg|woff|eot|ttf)\??.*$/,
         loader: 'url-loader',
         query: {
