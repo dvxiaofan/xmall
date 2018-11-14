@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-09 16:47:42 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-12 14:14:39
+ * @Last Modified time: 2018-11-14 12:40:57
  */
 
  const Hogan = require('hogan.js');
@@ -67,7 +67,7 @@ const _mm = {
 	},
 	// 字段验证， 校验是否为空， 手机、邮箱是否正确
 	validate(value, type) {
-		const value = $.trim(value);
+		var value = $.trim(value);
 		// 非空验证
 		if (type === 'require') {
 			return !!value;
@@ -83,7 +83,7 @@ const _mm = {
 	},
 	//  跳转登录页面
 	doLogin() {
-		window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+		window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
 	},
 	// 跳转主页
 	goHome() {

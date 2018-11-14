@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-12 15:40:32 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-12 17:05:04
+ * @Last Modified time: 2018-11-14 15:25:32
  */
 
 require('./index.css');
@@ -28,11 +28,11 @@ const nav = {
 		});
 		// 注册点击事件
 		$('.js-register').click(() => {
-			window.location.href = './register.html';
+			window.location.href = './user-register.html';
 		});
 		// 退出点击事件
 		$('.js-logout').click(() => {
-			_user.logout(res => {
+			_user.logout(() => {
 				window.location.reload();
 			}, (error) => {
 				_mm.errorTips(error);
