@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-12 16:33:32 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-14 12:16:24
+ * @Last Modified time: 2018-11-14 16:14:47
  */
 
 const _mm = require('util/mm.js');
@@ -12,6 +12,29 @@ const _user = {
 	login(userInfo, resolve, reject) {
 		_mm.request({
 			url			: _mm.getServerUrl('/user/login.do'),
+			method	: 'POST',
+			data		: userInfo,
+			success	: resolve,
+			error		: reject
+		})
+	},
+	// 检查用户名是否存在
+	checkUsername(username, resolve, reject) {
+		_mm.request({
+			url			: _mm.getServerUrl('/user/check_valid.do'),
+			method	: 'POST',
+			data		: {
+				type	: 'username',
+				str		: username
+			},
+			success	: resolve,
+			error		: reject
+		})
+	},
+	// 用户注册
+	register(userInfo, resolve, reject) {
+		_mm.request({
+			url			: _mm.getServerUrl('/user/register.do'),
 			method	: 'POST',
 			data		: userInfo,
 			success	: resolve,

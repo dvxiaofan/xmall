@@ -2,15 +2,15 @@
  * @Author: xiaofan 
  * @Date: 2018-11-12 17:18:23 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-13 17:31:55
+ * @Last Modified time: 2018-11-14 15:41:16
  */
 
-.footer {
+/* .footer {
 	position: fixed;
 	bottom: 10px;
 	width: 100%;
 	margin: 0 auto;
-}
+} */
 
 .footer .links, .copyright {
 	color: #666;
