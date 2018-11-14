@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-14 15:28:43
+ * @Last Modified time: 2018-11-14 16:46:31
  */
 
 var webpack           = require('webpack');
@@ -26,11 +26,12 @@ var getHtmlWebpackPlugin = function (name, title) {
 
 var config = {
   entry: {
-    'index'         : ['./src/page/index/index.js'],
-    'user-login'    : ['./src/page/user-login/index.js'],
-    'user-register' : ['./src/page/user-register/index.js'],
-    'common'        : ['./src/page/common/index.js'],
-    'result'        : ['./src/page/result/index.js'],
+    'index'           : ['./src/page/index/index.js'],
+    'user-login'      : ['./src/page/user-login/index.js'],
+    'user-register'   : ['./src/page/user-register/index.js'],
+    'user-pass-reset' : ['./src/page/user-pass-reset/index.js'],
+    'common'          : ['./src/page/common/index.js'],
+    'result'          : ['./src/page/result/index.js'],
   },
   output: {
     path      : './dist', // 打包路径
@@ -77,6 +78,7 @@ var config = {
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('index', '首页')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-login', '用户登录')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-register', '用户注册')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-pass-reset', '找回密码')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('result', '操作结果')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('list', '结果列表')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('order-list', '订单中心')),

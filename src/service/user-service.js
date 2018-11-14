@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-12 16:33:32 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-14 16:14:47
+ * @Last Modified time: 2018-11-14 23:55:38
  */
 
 const _mm = require('util/mm.js');
@@ -35,6 +35,38 @@ const _user = {
 	register(userInfo, resolve, reject) {
 		_mm.request({
 			url			: _mm.getServerUrl('/user/register.do'),
+			method	: 'POST',
+			data		: userInfo,
+			success	: resolve,
+			error		: reject
+		})
+	},
+	// 获取密码提示问题
+	getQuestion(username, resolve, reject) {
+		_mm.request({
+			url			: _mm.getServerUrl('/user/forget_get_question.do'),
+			method	: 'POST',
+			data		: {
+				username: username
+			},
+			success	: resolve,
+			error		: reject
+		})
+	},
+	// 检查问题答案获取token
+	checkAnswer(userInfo, resolve, reject) {
+		_mm.request({
+			url			: _mm.getServerUrl('/user/forget_check_answer.do'),
+			method	: 'POST',
+			data		: userInfo,
+			success	: resolve,
+			error		: reject
+		})
+	},
+	// 忘记密码的重置密码
+	resetPassword(userInfo, resolve, reject) {
+		_mm.request({
+			url			: _mm.getServerUrl('/user/forget_reset_password.do'),
 			method	: 'POST',
 			data		: userInfo,
 			success	: resolve,

@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-12 14:31:19 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-12 15:02:13
+ * @Last Modified time: 2018-11-14 17:06:03
  */
 
 /* css reset */
@@ -70,8 +70,8 @@ input[type='checkbox'] {
 	font-weight: bold;
 	color: #fff;
 	background-color: #c60023;
-	height: 40px;
-	line-height: 40px;
+	height: 35px;
+	line-height: 35px;
 	vertical-align: middle;
 	border: none;
 	outline: none;
