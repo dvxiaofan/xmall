@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-12 16:33:32 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-15 17:16:33
+ * @Last Modified time: 2018-11-15 23:27:54
  */
 
 const _mm = require('util/mm.js');
@@ -86,6 +86,17 @@ const _user = {
 	updateUserInfo(userInfo, resolve, reject) {
 		_mm.request({
 			url			: _mm.getServerUrl('/user/update_information.do'),
+			method	: 'POST',
+			data		: userInfo,
+			success	: resolve,
+			error		: reject
+		})
+	},
+
+	// 更新当前用户密码
+	updatePass(userInfo, resolve, reject) {
+		_mm.request({
+			url			: _mm.getServerUrl('/user/reset_password.do'),
 			method	: 'POST',
 			data		: userInfo,
 			success	: resolve,
