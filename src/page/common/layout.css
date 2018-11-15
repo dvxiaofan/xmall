@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-12 14:31:19 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-14 17:06:03
+ * @Last Modified time: 2018-11-15 16:07:15
  */
 
 /* css reset */
@@ -37,6 +37,26 @@ input[type='checkbox'] {
 	width: 1080px;
 	margin: 0 auto;
 	position: relative;
+	overflow: hidden;
+}
+
+/* panel */
+.panel {
+	padding: 10px;
+	margin-bottom: 10px;
+	background: #fff;
+}
+
+.panel .panel-title {
+	font-size: 16px;
+	padding: 10px;
+	color: #666;
+	font-weight: bold;
+	border-bottom: 1px solid #eee;
+}
+
+.panel .panel-body {
+	padding: 10px;
 	overflow: hidden;
 }
 

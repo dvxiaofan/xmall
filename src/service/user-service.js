@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-12 16:33:32 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-14 23:55:38
+ * @Last Modified time: 2018-11-15 17:16:33
  */
 
 const _mm = require('util/mm.js');
@@ -73,6 +73,26 @@ const _user = {
 			error		: reject
 		})
 	},
+	// 获取当前登录用户的详细信息
+	getUserInfo(resolve, reject) {
+		_mm.request({
+			url			: _mm.getServerUrl('/user/get_information.do'),
+			method	: 'POST',
+			success	: resolve,
+			error		: reject
+		})
+	},
+	// 更新当前用户信息
+	updateUserInfo(userInfo, resolve, reject) {
+		_mm.request({
+			url			: _mm.getServerUrl('/user/update_information.do'),
+			method	: 'POST',
+			data		: userInfo,
+			success	: resolve,
+			error		: reject
+		})
+	},
+
 	// 检查登录状态
 	checkLogin(resolve, reject) {
 		_mm.request({

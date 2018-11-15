@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-12 17:28:41 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-13 11:30:18
+ * @Last Modified time: 2018-11-15 15:47:04
  */
 
 
@@ -34,4 +34,15 @@
 	position: absolute;
 	height: 44px;
 	width: 80px;
+}
+
+/* 面包屑导航 */
+.crumb {
+	height: 50px;
+	line-height: 50px;
+	background: #eee;
+	color: #888;
+	font-size: 16px;
+	margin-bottom: 10px;
+	border-top: 2px solid #c60023;
 }
