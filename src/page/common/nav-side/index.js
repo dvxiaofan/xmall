@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-13 15:06:04 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-15 17:54:28
+ * @Last Modified time: 2018-11-15 23:07:18
  */
 
 
@@ -14,10 +14,10 @@ const navSide = {
 	option: {
 		name: '',
 		navList: [
-			{ name: 'user-center', desc: '个人中心', herf: './user-center.html' },
-			{ name: 'order-list', desc: '我的订单', herf: './order-list.html' },
-			{ name: 'pass-update', desc: '修改密码', herf: './pass-update.html' },
-			{ name: 'about', desc: '关于MMall', herf: './about.html' },
+			{ name: 'user-center', desc: '个人中心', href: './user-center.html' },
+			{ name: 'order-list', desc: '我的订单', href: './order-list.html' },
+			{ name: 'user-pass-update', desc: '修改密码', href: './user-pass-update.html' },
+			{ name: 'about', desc: '关于MMall', href: './about.html' },
 		]
 	},
 	init(option) {
