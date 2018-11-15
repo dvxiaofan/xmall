@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-14 15:30:18 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-14 16:30:15
+ * @Last Modified time: 2018-11-15 15:09:26
  */
 
 require('./index.css');
@@ -28,8 +28,11 @@ const page = {
 	bindEvent() {
 		const _this = this;
 		// 验证username
-		$('#username').blur(() => { 
-			const username = $.trim($(this).val());
+		const $username = $('#username');
+		$username.blur(() => { 
+			const username = $.trim($username.val());
+						
+			// username 是否为空
 			if (!username) return;
 			// 异步验证用户名是否已经存在
 			_user.checkUsername(username, (res) => {
