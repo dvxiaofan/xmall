@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 15:42:22 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-19 12:10:45
+ * @Last Modified time: 2018-11-19 12:21:37
  */
 
 require('./index.css');
@@ -26,7 +26,7 @@ $(function () {
 	});
 
 	$('.banner-con .banner-arrow').click(function() {
-		var fd = $(this).hasClass('prev') ? 'prev' :'next';
+		const fd = $(this).hasClass('prev') ? 'prev' :'next';
 		$unslider.data('unslider')[fd]();
 	});
 });

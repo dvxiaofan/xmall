@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-12 17:28:52 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-13 11:31:14
+ * @Last Modified time: 2018-11-19 14:06:15
  */
 
 require('./index.css');
@@ -12,6 +12,7 @@ const _mm = require('util/mm.js');
 //  通用页面头部
 const header = {
 	init() {
+		this.onLoad();
 		this.bindEvent();
 	},
 	onLoad() {
