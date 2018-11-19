@@ -2,10 +2,10 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 16:11:50 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-16 17:45:49
+ * @Last Modified time: 2018-11-18 20:16:00
  */
 
-
+/* 左侧商品列表 */
 .keywords-list {
 	float: left;
 	width: 240px;
@@ -36,6 +36,7 @@
 	color: #c60023;
 }
 
+/* banner */
 .banner-con {
 	width: 830px;
 	height: 370px;
@@ -45,6 +46,75 @@
 
 .banner-con .loading {
 	margin-top: 150px;
+}
+
+.banner-con .banner-img {
+	width: 100%;
+	height: 370px;
+}
+
+.banner .dot {
+	-webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
+	-moz-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
+	-ms-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
+	-o-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
+	filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
+}
+
+.banner .dots {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 20px;
+	text-align: center;
+}
+
+.banner .dots li {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: 0 4px;
+	text-indent: -999em;
+	border: 2px solid #fff;
+	border-radius: 6px;
+	cursor: pointer;
+	opacity: .4;
+	-webkit-transition: background .5s, opacity .5s;
+	-moz-transition: background .5s, opacity .5s;
+	transition: background .5s, opacity .5s;
+}
+
+.banner .dots li.active {
+	background: #fff;
+	opacity: 1;
+}
+
+/* banner 翻页按钮 */
+.banner-con .banner-arrow {
+	position: absolute;
+	top: 160px;
+	width: 30px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	background: #ccc;
+	background: rgba(0, 0, 0, .2);
+	cursor: pointer;
+}
+
+.banner-con .banner-arrow.prev {
+	left: 0;
+}
+
+.banner-con .banner-arrow.next {
+	right: 0;
+}
+
+.banner-con .banner-arrow:hover {
+	background: #aaa;
+	background: rgba(0, 0, 0, .5);
 }
 
 /* floor */
@@ -57,12 +127,32 @@
 	border-bottom: 1px solid #d58717;
 }
 
+.floor-wrap:nth-child(2) .floor-title {
+	color: #32bd77;
+	border-bottom: 1px solid #32bd77;
+}
+
+.floor-wrap:nth-child(3) .floor-title {
+	color: #38dded;
+	border-bottom: 1px solid #38dded;
+}
+
+.floor-wrap:nth-child(4) .floor-title {
+	color: #815ce7;
+	border-bottom: 1px solid #815ce7;
+}
+
+.floor-wrap:nth-child(5) .floor-title {
+	color: #cea03c;
+	border-bottom: 1px solid #cea03c;
+}
+
 .floor-wrap .floor-list {
 	margin-right: -20px;
 	overflow: hidden;
 }
 
-.floor-wrap .floor-list  .floor-item {
+.floor-wrap .floor-list .floor-item {
 	position: relative;
 	width: 200px;
 	height: 220px;
@@ -72,7 +162,11 @@
 	background: #fff;
 }
 
-.floor-wrap .floor-list  .floor-item .floor-text {
+.floor-wrap .floor-list .floor-item:hover {
+	box-shadow: 1px 1px 7px #ddd;
+}
+
+.floor-wrap .floor-list .floor-item .floor-text {
 	position: absolute;
 	top: 12px;
 	left: 20px;
@@ -80,7 +174,7 @@
 	color: #555;
 }
 
-.floor-wrap .floor-list  .floor-item .floor-img {
+.floor-wrap .floor-list .floor-item .floor-img {
 	position: absolute;
 	right: 15px;
 	bottom: 10px;
