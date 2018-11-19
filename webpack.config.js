@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-19 12:17:32
+ * @Last Modified time: 2018-11-19 17:34:05
  */
 
 var webpack           = require('webpack');
@@ -28,6 +28,7 @@ var config = {
   entry: {
     'index'                 : ['./src/page/index/index.js'],
     'list'                  : ['./src/page/list/index.js'],
+    'detail'                : ['./src/page/detail/index.js'],
     'user-login'            : ['./src/page/user-login/index.js'],
     'user-register'         : ['./src/page/user-register/index.js'],
     'user-pass-reset'       : ['./src/page/user-pass-reset/index.js'],
@@ -86,6 +87,7 @@ var config = {
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-pass-update', '修改密码')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('result', '操作结果')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('list', '商品列表页')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('detail', '商品详情页')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('order-list', '订单中心')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-center', '个人中心')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-center-update', '修改资料')),
