@@ -2,16 +2,17 @@
  * @Author: xiaofan 
  * @Date: 2018-11-19 12:16:43 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-19 15:07:36
+ * @Last Modified time: 2018-11-19 16:19:42
  */
 
 require('./index.css');
 require('../common/nav/index.js');
 require('../common/header/index.js');
 
-const _mm = require('util/mm.js');
-const _product = require('service/product-service.js');
-const tempIndex = require('./index.string');
+const _mm				 	= require('util/mm.js');
+const Pagination 	= require('util/pagination/index.js');
+const _product	 	= require('service/product-service.js');
+const tempIndex	 	= require('./index.string');
 
 const page = {
 	data: {
@@ -84,15 +85,33 @@ const page = {
 				list: res.list
 			});
 			$pListCon.html(listHtml);
-			_this.loadPagination(res.pageNum, res.pages);
+			_this.loadPagination({
+				hasPreviousPage		: res.hasPreviousPage,
+				hasNextPage				: res.hasNextPage,
+				prePage						: res.prePage,
+				nextPage					: res.nextPage,
+				pageNum						: res.pageNum,
+				pages							: res.pages,
+				isFirstPage				: res.isFirstPage,
+				isLastPage				: res.isLastPage,
+			});
 		}, (errorMsg) => {
 			_mm.errorTips(errorMsg);			
 		});
 	},
 	// 加载分页信息
-	loadPagination(pageNum, pages) {},
+	loadPagination(pageInfo) {
+		const _this = this;
+		_this.pagination ? '' : (_this.pagination = new Pagination());
+		_this.pagination.render($.extend({}, pageInfo, {
+			container: $('.pagination'),
+			onSelectPage: (pageNum) => {
+				_this.data.listParam.pageNum = pageNum;
+				_this.loadList();
+			}
+		}));
+	},
 };
-
 
 
 $(() => {
