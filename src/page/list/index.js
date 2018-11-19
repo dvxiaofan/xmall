@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-19 12:16:43 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-19 14:15:59
+ * @Last Modified time: 2018-11-19 15:07:36
  */
 
 require('./index.css');
@@ -34,18 +34,56 @@ const page = {
 		this.loadList();
 	},
 
-	bindEvent() {},
+	bindEvent() {
+		const _this = this;
+		// 排序点击事件
+		$('.sort-item').click( function() { 
+			const $this = $(this);
+			_this.data.listParam.pageNum = 1;
+			
+			// 点击默认排序
+			if ($this.data('type') === 'default') {
+				// 已经是active
+				if($this.hasClass('active')) {
+					return;
+				} else {
+					$this.addClass('active').siblings('.sort-item').removeClass('active asc desc');
+					_this.data.listParam.orderBy = 'default';
+				}
+			}
+			// 点击价格排序 
+			else if ($this.data('type') === 'price') {
+				$this.addClass('active').siblings('.sort-item').removeClass('active asc desc');
+				if(!$this.hasClass('asc')) {
+					$this.addClass('asc').removeClass('desc');
+					_this.data.listParam.orderBy = 'price_asc';
+				} else {
+					$this.addClass('desc').removeClass('asc');
+					_this.data.listParam.orderBy = 'price_desc';
+				}
+			}
+			// 重新加载list
+			_this.loadList();
+
+		});
+	},
 
 	// 加载list数据
 	loadList() {
 		var _this = this,
 					listHtml = '',
-					listParam = this.data.listParam;
+					listParam = this.data.listParam,
+					$pListCon = $('.p-list-con');
+		
+		$pListCon.html('<div class="loading"></div>');
+		// 删除参数中不必要的字段
+		listParam.categoryId ? (delete listParam.keyword) : (delete listParam.categoryId);
+
 		_product.getProList(listParam, (res) => {
 			listHtml = _mm.renderHtml(tempIndex, {
 				list: res.list
 			});
-			$('.p-list-con').html(listHtml);
+			$pListCon.html(listHtml);
 			_this.loadPagination(res.pageNum, res.pages);
 		}, (errorMsg) => {
 			_mm.errorTips(errorMsg);			
