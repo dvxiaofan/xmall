@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-12 16:59:56 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-20 17:26:33
+ * @Last Modified time: 2018-11-20 18:19:07
  */
 
 const _mm = require('util/mm.js');
@@ -68,6 +68,28 @@ const _cart = {
 	unselectAllProduct(resolve, reject) {
 		_mm.request({
 			url: _mm.getServerUrl('/cart/un_select_all.do'),
+			success: resolve,
+			error: reject
+		})
+	},
+
+	// 更新购物车商品信息
+	updateCart(productInfo, resolve, reject) {
+		_mm.request({
+			url: _mm.getServerUrl('/cart/update.do'),
+			data: productInfo,
+			success: resolve,
+			error: reject
+		})
+	},
+
+	// 移除购物车某个产品
+	deleteProduct(productIds, resolve, reject) {
+		_mm.request({
+			url: _mm.getServerUrl('/cart/delete_product.do'),
+			data: {
+				productIds: productIds
+			},
 			success: resolve,
 			error: reject
 		})
