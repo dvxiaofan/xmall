@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-19 12:16:34 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-19 14:35:12
+ * @Last Modified time: 2018-11-20 11:49:30
  */
 
 
@@ -97,4 +97,15 @@
 	margin-bottom: 10px;
 	color: #666;
 	text-decoration: none;
+}
+
+/* 错误信息 */
+.err-tip {
+	height: 60px;
+	line-height: 60px;
+	font-size: 17px;
+	color: #f60;
+	font-weight: bold;
+	text-align: center;
+	background: #eee;
 }

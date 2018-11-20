@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-19 17:30:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-19 23:36:43
+ * @Last Modified time: 2018-11-20 12:11:40
  */
 
 /* 大图部分 */
@@ -156,9 +156,20 @@
 .detail-wrap .detail-con {
 	padding-top: 20px;
 	background: #fff;
+	text-align: center;
 }
-
 
 .detail-wrap .detail-con img {
 	margin: 0 auto;
+}
+
+/* 错误信息 */
+.err-tip {
+	height: 60px;
+	line-height: 60px;
+	font-size: 17px;
+	color: #f60;
+	font-weight: bold;
+	text-align: center;
+	background: #eee;
 }

@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-19 12:22:16 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-19 15:13:26
+ * @Last Modified time: 2018-11-20 11:53:19
  */
 
 
@@ -16,6 +16,16 @@ const _product = {
 			data		: listParam,
 			success	: resolve,
 			error		: reject
+		})
+	},
+	getProductDetail(productId, resolve, reject) {
+		_mm.request({
+			url						: _mm.getServerUrl('/product/detail.do'),
+			data					: {
+				productId		: productId
+			},
+			success				: resolve,
+			error					: reject
 		})
 	},
 };
