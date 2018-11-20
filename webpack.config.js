@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-19 17:34:05
+ * @Last Modified time: 2018-11-20 14:48:11
  */
 
 var webpack           = require('webpack');
@@ -29,6 +29,7 @@ var config = {
     'index'                 : ['./src/page/index/index.js'],
     'list'                  : ['./src/page/list/index.js'],
     'detail'                : ['./src/page/detail/index.js'],
+    'cart'                  : ['./src/page/cart/index.js'],
     'user-login'            : ['./src/page/user-login/index.js'],
     'user-register'         : ['./src/page/user-register/index.js'],
     'user-pass-reset'       : ['./src/page/user-pass-reset/index.js'],
