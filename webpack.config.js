@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-20 14:48:11
+ * @Last Modified time: 2018-11-21 12:28:31
  */
 
 var webpack           = require('webpack');
@@ -30,6 +30,9 @@ var config = {
     'list'                  : ['./src/page/list/index.js'],
     'detail'                : ['./src/page/detail/index.js'],
     'cart'                  : ['./src/page/cart/index.js'],
+    'order-confirm'          : ['./src/page/order-confirm/index.js'],
+    'order-list'            : ['./src/page/order-list/index.js'],
+    'order-detail'          : ['./src/page/order-detail/index.js'],
     'user-login'            : ['./src/page/user-login/index.js'],
     'user-register'         : ['./src/page/user-register/index.js'],
     'user-pass-reset'       : ['./src/page/user-pass-reset/index.js'],
@@ -87,9 +90,11 @@ var config = {
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-pass-reset', '找回密码')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-pass-update', '修改密码')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('result', '操作结果')),
-    new HtmlWebpackPlugin(getHtmlWebpackPlugin('list', '商品列表页')),
-    new HtmlWebpackPlugin(getHtmlWebpackPlugin('detail', '商品详情页')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('list', '商品列表')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('detail', '商品详情')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('order-list', '订单中心')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('order-confirm', '订单确认')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('order-detail', '订单详情')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-center', '个人中心')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-center-update', '修改资料')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('about', '关于MMall')),
