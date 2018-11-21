@@ -2,12 +2,12 @@
  * @Author: xiaofan 
  * @Date: 2018-11-21 12:05:38 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-21 15:52:00
+ * @Last Modified time: 2018-11-21 23:40:10
  */
 
 
 /* 地址样式 */
-.address-item {
+.address-item, .address-add {
 	width: 200px;
 	padding: 5px 10px;
 	margin: 20px 10px 0 0 ;
@@ -19,7 +19,7 @@
 .address-item.active {
 	border: 3px dashed #c60023;
 }
-.address-item:hover {
+.address-item:hover, .address-add:hover {
 	background: #fafafa;
 }
 
@@ -53,18 +53,18 @@
 	margin-right: 5px;
 }
 
-.address-item .address-new {
+.address-add .address-new {
 	padding: 12px 0;
 	text-align: center;
 	color: #ccc;
 }
 
-.address-item .address-new .fa {
+.address-add .address-new .fa {
 	font-size: 50px;
 	line-height: 50px;
 }
 
-.address-item .address-new .text {
+.address-add .address-new .text {
 	font-size: 13px;
 }
 
@@ -139,5 +139,93 @@
 	font-weight: bold;
 	text-align: center;
 	background: #eee;
+}
+
+/* modal部分 */
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #eee;
+	background: rgba(0, 0, 0, .4);
+	z-index: 1000;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.modal .modal-container {
+	width: 700px;
+	margin: 50px auto;
+	background: #fff;
+	border-radius: 2px;
+}
+
+.modal .modal-container .modal-header {
+	position: relative;
+	padding: 15px;
+	border-bottom: 1px solid #ccc;
+}
+
+.modal .modal-container .modal-header .modal-title {
+	font-size: 14px;
+}
+
+.modal .modal-container .modal-header .close {
+	position: absolute;
+	padding: 10px;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+}
+
+.modal .modal-container .modal-body {
+	padding: 15px;
+}
+
+/* form部分 */
+.form .form-line {
+	margin: 5px 0;
+	overflow: hidden;
+}
+
+.form .form-line .label {
+	display: block;
+	float: left;
+	width: 110px;
+	text-align: right;
+	height: 30px;
+	line-height: 30px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.form .form-line .label .required {
+	color: red;
+}
+
+.form .form-line .form-item {
+	width: 260px;
+	padding: 0 5px;
+	height: 30px;
+	line-height: 30px;
+	outline: none;
+	margin-right: 8px;
+	margin-bottom: 5px;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+}
+
+.form .form-line .form-item.form-city {
+	width: 130px;
+}
+
+.form .form-line .address-btn {
+	margin-left: 120px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	border-radius: 5px;
 }
 

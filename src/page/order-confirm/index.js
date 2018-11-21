@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-21 12:06:09 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-21 16:21:06
+ * @Last Modified time: 2018-11-21 23:48:29
  */
 
 require('./index.css');
@@ -33,9 +33,33 @@ const page = {
 	bindEvent() {
 		const _this = this;
 
-		// 
-		$(document).on('click', '', function () {
+		// 地址选择
+		$(document).on('click', '.address-item', function () {
+			$(this).addClass('active').siblings('.address-item').removeClass('active');
+			_this.data.seletedAddressId = $(this).data('id');
+		});
+
+		// 地址添加
+		$(document).on('click', '.address-add', function () {
+			console.log(111);
 			
+		});
+
+		// 订单提交
+		$(document).on('click', '.order-submit', function () {
+			var shippingId = _this.data.seletedAddressId;
+			
+			if(shippingId) {
+				_order.createOrder({
+					shippingId: shippingId
+				}, (res) => {
+					window.location.href = `./payment.html?orderNumber=${res.orderNo}`;
+				}, (errorMsg) => {
+					_mm.errorTips(errorMsg);
+				});
+			} else {
+				_mm.errorTips('请选择地址后再提交')
+			}
 		});
 	},
 	// 加载地址列表
