@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-21 12:05:38 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-21 23:40:10
+ * @Last Modified time: 2018-11-22 16:17:21
  */
 
 
@@ -26,6 +26,7 @@
 .address-item .address-title {
 	padding-bottom: 3px;
 	overflow: hidden;
+	font-size: 14px;
 	color: #666;
 	height: 20px;
 	line-height: 20px;
@@ -34,9 +35,10 @@
 
 .address-item .address-detail {
 	margin-top: 5px;
+	font-size: 13px;
 	color: #666;
 	height: 40px;
-	line-height: 40px;
+	line-height: 22px;
 	overflow: hidden;
 }
 
