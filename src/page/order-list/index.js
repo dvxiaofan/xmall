@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-21 12:06:09 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-23 17:13:33
+ * @Last Modified time: 2018-11-23 17:24:50
  */
 
 require('./index.css');
@@ -73,7 +73,6 @@ const page = {
 		}));
 	},
 
-	bindEvent() {},
 };
 
 
