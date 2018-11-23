@@ -1,4 +1,4 @@
-<div class="modal">
+<div class="modal close">
 	<div class="modal-container">
 
 		<div class="modal-header">
@@ -8,6 +8,7 @@
 			{{^isUpdate}}
 			<h1 class="modal-title">使用新地址</h1>
 			{{/isUpdate}}
+			<!-- 关闭按钮 -->
 			<i class="fa fa-close close"></i>
 		</div>
 		<div class="modal-body">

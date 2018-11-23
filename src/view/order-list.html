@@ -25,7 +25,26 @@
 	</div>
 
 	<div class="page-wrap w">
-		
+
+		<%= require('html-loader!./layout/nav-side.html') %>
+		<div class="content with-nav">
+			<div class="panel">
+				<div class="panel-title">
+					<%= htmlWebpackPlugin.options.title %>
+				</div>
+				<div class="panel-body">
+					<!-- 订单列表 -->
+						<div class="order-list-con">
+
+						</div>
+						<!-- 分页容器 -->
+						<div class="pagination">
+
+						</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 	<!-- 引入footer-common -->

@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-21 12:06:09 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-23 00:08:25
+ * @Last Modified time: 2018-11-23 14:34:57
  */
 
 require('./index.css');
@@ -45,7 +45,7 @@ const page = {
 			// 弹出添加地址模块
 			addressModal.show({
 				isUpdate: false,
-				onSuccess: () => {
+				onSuccess: function() {
 					_this.loadAddressList();
 				}
 			});

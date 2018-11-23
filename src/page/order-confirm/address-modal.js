@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-21 12:16:39 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-22 23:49:43
+ * @Last Modified time: 2018-11-23 14:42:26
  */
 
 
@@ -79,12 +79,12 @@ const addressModal = {
 			_this.hide();
 		})
 		// 阻止事件冒泡
-		// this.$modalWrap.find('.modal-container').click((e) => {
-		// 	e.stopPropagation();
-		// })
+		this.$modalWrap.find('.modal-container').click((e) => {
+			e.stopPropagation();
+		})
 
 		// 保存地址事件
-		$(document).on('click', '.address-btn', function () {
+		this.$modalWrap.find('.address-btn').click(function () {
 			var receiverInfo = _this.getReceiverInfo(),
 				isUpdate = _this.option.isUpdate;
 
