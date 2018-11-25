@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-21 12:28:31
+ * @Last Modified time: 2018-11-23 23:59:57
  */
 
 var webpack           = require('webpack');
@@ -33,6 +33,7 @@ var config = {
     'order-confirm'          : ['./src/page/order-confirm/index.js'],
     'order-list'            : ['./src/page/order-list/index.js'],
     'order-detail'          : ['./src/page/order-detail/index.js'],
+    'payment'               : ['./src/page/payment/index.js'],
     'user-login'            : ['./src/page/user-login/index.js'],
     'user-register'         : ['./src/page/user-register/index.js'],
     'user-pass-reset'       : ['./src/page/user-pass-reset/index.js'],
@@ -95,6 +96,7 @@ var config = {
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('order-list', '订单中心')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('order-confirm', '订单确认')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('order-detail', '订单详情')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('payment', '订单支付')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-center', '个人中心')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-center-update', '修改资料')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('about', '关于MMall')),

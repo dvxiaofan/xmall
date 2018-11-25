@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<%= require('html-loader!./layout/head-common.html') %>
+	<title>
+		<%= htmlWebpackPlugin.options.title %> - MMal电商平台</title>
+</head>
+
+<body>
+	<!-- nav -->
+	<%= require('html-loader!./layout/nav.html') %>
+	<!-- 引入header -->
+	<%= require('html-loader!./layout/header.html') %>
+
+	<div class="crumb">
+		<div class="w">
+			<div class="crumb-con">
+				<a href="./index.html" class="link">MMall</a>
+				<span>></span>
+				<span class="link-text">
+					<%= htmlWebpackPlugin.options.title %></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-wrap w">
+			
+	</div>
+
+	<!-- 引入footer-common -->
+	<%= require('html-loader!./layout/footer-common.html') %>
+</body>
+
+</html>

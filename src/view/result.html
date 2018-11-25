@@ -3,7 +3,8 @@
 
 <head>
 	<%= require('html-loader!./layout/head-common.html') %>
-	<title><%= htmlWebpackPlugin.options.title %> - MMal电商平台</title>
+	<title>
+		<%= htmlWebpackPlugin.options.title %> - MMal电商平台</title>
 </head>
 
 <body>
@@ -33,13 +34,22 @@
 			</div>
 		</div>
 
-		<div class="result-con hide pass-reset-success">
-				<h1 class="result-title">密码重置成功</h1>
-				<div class="result-content">
-					<a href="./user-login.html" class="link">重新登录</a>
-					<a href="./index.html" class="link">回到首页</a>
-				</div>
+		<div class="result-con payment-success">
+			<h1 class="result-title">支付成功</h1>
+			<div class="result-content">
+				<a href="./index.html" class="link">继续购物</a>
+				<a href="./order-detail.html?orderNumber=" class="link order-number">查看该订单</a>
 			</div>
+		</div>
+
+		<div class="result-con hide pass-reset-success">
+			<h1 class="result-title">密码重置成功</h1>
+			<div class="result-content">
+				<a href="./user-login.html" class="link">重新登录</a>
+				<a href="./index.html" class="link">回到首页</a>
+			</div>
+		</div>
+
 	</div>
 	<!-- 引入footer-common -->
 	<%= require('html-loader!./layout/footer-common.html') %>
