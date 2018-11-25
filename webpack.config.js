@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-23 23:59:57
+ * @Last Modified time: 2018-11-25 22:54:13
  */
 
 var webpack           = require('webpack');
@@ -10,13 +10,14 @@ var Ex                = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // 配置环境变量 dev / online 
-var WEBPACK_ENV = process.env.WEBPACK_ENV || '';
+var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 
 // 获取HTML的webpack参数
 var getHtmlWebpackPlugin = function (name, title) {
   return {
     template  : './src/view/' + name + '.html',
     filename   : 'view/' + name + '.html',
+    favicon   : './favicon.ico',
     inject    : true,
     title     : title,
     hash      : true,
@@ -42,10 +43,11 @@ var config = {
     'user-center-update'    : ['./src/page/user-center-update/index.js'],
     'common'                : ['./src/page/common/index.js'],
     'result'                : ['./src/page/result/index.js'],
+    'about'                 : ['./src/page/about/index.js'],
   },
   output: {
-    path      : './dist', // 打包路径
-    publicPath: '/dist', // 访问路径
+    path      : __dirname + '/dist/', // 打包路径
+    publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.webxiaofan.com/mmall-fe/dist/', // 访问路径
     filename   : 'js/[name].js',
   },
   module: {
@@ -54,7 +56,11 @@ var config = {
         loader  : Ex.extract('style-loader', 'css-loader')
       }, {
         test    : /\.string$/,
-        loader  : 'html-loader'
+        loader  : 'html-loader',
+        query   : {
+          minimize: true,
+          removeAttrivuteQuotes: false
+        },
       },
       {
         test    : /\.(png|gif|jpg|svg|woff|eot|ttf)\??.*$/,
