@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-25 22:54:13
+ * @Last Modified time: 2018-11-26 15:18:51
  */
 
 var webpack           = require('webpack');
@@ -105,7 +105,7 @@ var config = {
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('payment', '订单支付')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-center', '个人中心')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('user-center-update', '修改资料')),
-    new HtmlWebpackPlugin(getHtmlWebpackPlugin('about', '关于MMall')),
+    new HtmlWebpackPlugin(getHtmlWebpackPlugin('about', '关于XMall')),
     new HtmlWebpackPlugin(getHtmlWebpackPlugin('cart', '购物车')),
   ],
 };

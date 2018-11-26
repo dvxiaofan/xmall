@@ -1,4 +1,4 @@
-# mmall-fe
+# XMall-fe
 
 ## 项目介绍
 

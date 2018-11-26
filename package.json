@@ -1,7 +1,7 @@
 {
-  "name": "mmall-fe",
+  "name": "xmall-fe",
   "version": "1.0.0",
-  "description": "mmall 前端部分",
+  "description": "xmall 前端部分",
   "main": "index.js",
   "dependencies": {
     "font-awesome": "^4.7.0",
