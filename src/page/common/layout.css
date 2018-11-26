@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-12 14:31:19 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-15 16:07:15
+ * @Last Modified time: 2018-11-26 21:13:49
  */
 
 /* css reset */
@@ -13,6 +13,13 @@
 
 body {
 	background: #f6f6f6;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	flex: 1;
 }
 
 li {

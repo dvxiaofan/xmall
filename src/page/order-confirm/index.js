@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-21 12:06:09 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-23 14:34:57
+ * @Last Modified time: 2018-11-26 18:04:21
  */
 
 require('./index.css');
@@ -36,8 +36,13 @@ const page = {
 
 		// 地址选择
 		$(document).on('click', '.address-item', function () {
-			$(this).addClass('active').siblings('.address-item').removeClass('active');
-			_this.data.seletedAddressId = $(this).data('id');
+			if($(this).hasClass('active')) {
+				$(this).removeClass('active');
+				_this.data.seletedAddressId = null;
+			} else {
+				$(this).addClass('active').siblings('.address-item').removeClass('active');
+				_this.data.seletedAddressId = $(this).data('id');
+			}
 		});
 
 		// 地址添加

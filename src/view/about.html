@@ -13,22 +13,27 @@
 	<!-- 引入header -->
 	<%= require('html-loader!./layout/header.html') %>
 
-	<div class="crumb">
-		<div class="w">
-			<div class="crumb-con">
-				<a href="./index.html" class="link">XMall</a>
-				<span>></span>
-				<span class="link-text">
-					<%= htmlWebpackPlugin.options.title %></span>
+	<div class="main">
+		<div class="crumb">
+			<div class="w">
+				<div class="crumb-con">
+					<a href="./index.html" class="link">XMall</a>
+					<span>></span>
+					<span class="link-text">
+						<%= htmlWebpackPlugin.options.title %></span>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="page-wrap w">
-		<div class="panel">
-			<h1 class="panel-title">关于我们</h1>
-			<div class="panel-body">
-				欢迎访问XMall， 这是一个电商测试网站
+		<div class="page-wrap w">
+			<%= require('html-loader!./layout/nav-side.html') %>
+			<div class="content with-nav">
+				<div class="panel">
+					<h1 class="panel-title">关于XMall</h1>
+					<div class="panel-body">
+						欢迎访问XMall， 这是一个学习模仿的电商网站
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
