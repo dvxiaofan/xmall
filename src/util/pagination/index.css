@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-19 15:31:18 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-19 17:16:09
+ * @Last Modified time: 2018-11-26 22:23:46
  */
 
 .pg-content {
@@ -23,6 +23,13 @@
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+.pg-content .pg-item:hover {
+	border: 1px solid #c60023;
+}
+.pg-content .pg-item.disabled:hover {
+	border: 1px solid #ccc;
 }
 
 .pg-content .pg-item.disabled {

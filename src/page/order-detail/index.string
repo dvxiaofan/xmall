@@ -11,6 +11,9 @@
 				<span class="text">收件人： {{receiverName}}, {{receiverPhone}}, {{receiverProvince}} {{receiverCity}}
 					{{receiverDistrict}} {{receiverAddress}}, {{receiverZip}}</span>
 				{{/shippingVo}}
+				{{^shippingVo}}
+				<span class="text">收件人： 无</span>
+				{{/shippingVo}}
 			</div>
 			<div class="text-line">
 				<span class="text">订单状态： {{statusDesc}}</span>

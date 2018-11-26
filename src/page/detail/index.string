@@ -24,12 +24,24 @@
 		</div>
 		<div class="p-info-item p-count-con">
 			<span class="label">数量：</span>
+			{{#noStock}}
+			<input type="text" class="p-count" value="0" readonly />
+			<span class="p-count-btn plus no-stock">+</span>
+			<span class="p-count-btn minus no-stock">-</span>
+			{{/noStock}}
+			{{^noStock}}
 			<input type="text" class="p-count" value="1" readonly />
 			<span class="p-count-btn plus">+</span>
 			<span class="p-count-btn minus">-</span>
+			{{/noStock}}
 		</div>
 		<div class="p-info-item">
+			{{#noStock}}
+			<button class="btn cart-add no-stock" disabled>暂时缺货</button>
+			{{/noStock}}
+			{{^noStock}}
 			<button class="btn cart-add">加入购物车</button>
+			{{/noStock}}
 		</div>
 	</div>
 </div>

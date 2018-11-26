@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-19 17:30:21 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-20 12:28:26
+ * @Last Modified time: 2018-11-26 22:09:54
  */
 
 
@@ -18,7 +18,7 @@ const tempIndex = require('./index.string');
 const page = {
 	data: {
 		productId: _mm.getUrlParam('productId') || '',
-		// detailInfo: '',
+		disabled:	true,
 	},
 
 	init() {
@@ -48,8 +48,8 @@ const page = {
 			const type = $(this).hasClass('plus') ? 'plus' : 'minus',
 				$pCount = $('.p-count'),
 				currCount = parseInt($pCount.val()),
-				minCount = 1,
-				maxCount = _this.data.detailInfo.stock || 1;
+				minCount = _this.data.detailInfo.stock == 0 ? 0 : 1,
+				maxCount = _this.data.detailInfo.stock;
 			if(type === 'plus') {
 				$pCount.val(currCount < maxCount ? currCount + 1 : maxCount);
 			} else if(type === 'minus') {
@@ -74,13 +74,18 @@ const page = {
 	loadDetail() {
 		var html = '';
 		const _this = this;
-		const $pageWrap = $('.page-wrap');
+		const $pageWrap = $('.page-wrap');		
 
 		$pageWrap.html('<div class="loading"></div>')
 		_product.getProductDetail(this.data.productId, (res) => {
-			_this.filter(res);
 			// 缓存detail数据
 			_this.data.detailInfo = res;
+			_this.filter(res);
+			
+			if(_this.data.detailInfo.stock === 0) {
+				_this.data.disabled = false;
+			}
+
 			html = _mm.renderHtml(tempIndex, res);
 			$pageWrap.html(html);
 		}, (errorMsg) => {
@@ -89,7 +94,8 @@ const page = {
 	},
 
 	filter(data) {
-		data.subImages = data.subImages.split(',');
+		data.subImages 	= data.subImages.split(',');
+		data.noStock		= (data.stock == 0);
 	}
 	
 };
