@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-12-02 23:03:23
+ * @Last Modified time: 2018-12-02 23:10:37
  */
 
 var webpack           = require('webpack');
@@ -47,7 +47,7 @@ var config = {
   },
   output: {
     path      : __dirname + '/dist/', // 打包路径
-    publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.happymmall.com/xmall-fe/dist/', // 访问路径
+    publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.webxiaofan.com/xmall-fe/dist/', // 访问路径
     filename   : 'js/[name].js',
   },
   module: {
