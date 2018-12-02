@@ -2,7 +2,7 @@
  * @Author: xiaofan 
  * @Date: 2018-11-08 11:32:11 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-12-02 23:35:32
+ * @Last Modified time: 2018-12-03 00:41:10
  */
 
 var webpack           = require('webpack');
@@ -50,6 +50,9 @@ var config = {
     publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.webxiaofan.com/xmall-fe/dist/', // 访问路径
     filename   : 'js/[name].js',
   },
+  externals : {
+    'jquery' : 'window.jQuery'
+  },
   module: {
     loaders: [{
         test    : /\.css$/,
@@ -67,7 +70,7 @@ var config = {
         loader  : 'url-loader',
         query   : {
           limit     : 100,
-          publicPath: '../', // 解决打包后路径不对的问题
+          // publicPath: '../', // 解决打包后路径不对的问题
           name      : 'resource/[name].[ext]'
         }
       },
