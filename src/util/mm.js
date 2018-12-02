@@ -2,13 +2,13 @@
  * @Author: xiaofan 
  * @Date: 2018-11-09 16:47:42 
  * @Last Modified by: xiaofan
- * @Last Modified time: 2018-11-14 12:40:57
+ * @Last Modified time: 2018-12-03 00:20:11
  */
 
  const Hogan = require('hogan.js');
 
  const conf = {
-	 serverHost: ''
+	 serverHost: 'happymmall.com'
  };
 
 const _mm = {
