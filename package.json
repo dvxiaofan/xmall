@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/dvxiaofan/xmall-fe#readme",
   "dependencies": {
-    "sd": "0.0.3",
-    "webpack": "^3.2.0"
+    "sd": "0.0.3"
+  },
+  "devDependencies": {
+    "webpack": "^2.2.0"
   }
 }
